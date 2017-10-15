@@ -6,6 +6,9 @@ class App < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  set :app_file, __FILE__
+  set :root, File.dirname(__FILE__)
+
   get "/" do
     "Hello world!"
   end
