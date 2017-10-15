@@ -1,6 +1,8 @@
-require "sinatra"
 require "sinatra/reloader" if development?
+require "sinatra/base"
 
-get "/" do
-  "Hello world!"
+class App < Sinatra::Base
+  get "/" do
+    "Hello world!"
+  end
 end
