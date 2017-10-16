@@ -1,3 +1,4 @@
+require "httparty"
 require "pry"
 require "sinatra/base"
 require "sinatra/reloader"
