@@ -1,3 +1,4 @@
+require "app_konfig"
 require "httparty"
 require "pry"
 require "sinatra/activerecord"
