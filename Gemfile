@@ -11,3 +11,7 @@ gem "rake"
 gem "sinatra"
 gem "sinatra-activerecord"
 gem "sinatra-contrib"
+
+group :production do
+  gem "puma"
+end
