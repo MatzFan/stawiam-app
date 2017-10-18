@@ -1,9 +1,12 @@
 require "httparty"
 require "pry"
+require "sinatra/activerecord"
 require "sinatra/base"
 require "sinatra/reloader"
 
 class App < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+
   configure :development do
     register Sinatra::Reloader
   end
