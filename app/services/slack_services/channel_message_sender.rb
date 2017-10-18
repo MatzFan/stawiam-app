@@ -17,7 +17,7 @@ module SlackServices
     attr_reader :user_name
 
     def channel_message
-      "{ \"text\": \"*@here* UWAGA! Wóda dla wszystkich dzięki <@#{user_name}> \" }"
+      "{ 'text': '*@here* UWAGA! Wóda dla wszystkich dzięki <@#{user_name}> ' }"
     end
   end
 end
