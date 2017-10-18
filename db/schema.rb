@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20171016214012) do
 
   create_table "entries", force: :cascade do |t|
     t.string "user_uuid", null: false
-    t.string "full_name", null: false
+    t.string "full_name"
     t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
