@@ -5,6 +5,8 @@ require "sinatra/activerecord"
 require "sinatra/base"
 require "sinatra/reloader"
 
+ENV["RACK_ENV"] ||= "development"
+
 class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
