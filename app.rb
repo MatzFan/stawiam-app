@@ -17,8 +17,4 @@ class App < Sinatra::Base
 
   # Load all initializers
   require File.join(root, '/config/initializers/auto_loader.rb')
-
-  get "/" do
-    "Hello world!"
-  end
 end
