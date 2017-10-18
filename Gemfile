@@ -7,11 +7,8 @@ gem "app_konfig"
 gem "httparty"
 gem "pg"
 gem "pry"
+gem "puma"
 gem "rake"
 gem "sinatra"
 gem "sinatra-activerecord"
 gem "sinatra-contrib"
-
-group :production do
-  gem "puma"
-end
