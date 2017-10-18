@@ -16,5 +16,5 @@ class App < Sinatra::Base
   set :root, File.dirname(__FILE__)
 
   # Load all initializers
-  require File.join(root, '/config/initializers/auto_loader.rb')
+  require File.join(root, "/config/initializers/auto_loader.rb")
 end
