@@ -6,7 +6,7 @@ module SlackServices
     end
 
     def call
-      fetch_user_info
+      # fetch_user_info
       send_channel_notification
       send_slackbot_private_message
     end
