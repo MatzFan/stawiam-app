@@ -1,8 +1,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ceglaguru_development
-  username: grzegorz
+  database: stawiam_app_development
+  username: stawiam_app
   password:
   host: localhost
   port: 5432
