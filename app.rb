@@ -1,6 +1,8 @@
 require "app_konfig"
 require "httparty"
 require "pry"
+require "puma"
+require "sidekiq"
 require "sinatra/activerecord"
 require "sinatra/base"
 require "sinatra/reloader"
