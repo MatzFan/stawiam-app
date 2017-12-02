@@ -1,7 +1,7 @@
 class App
   post "/entries" do
     content_type :json
-    EntryServices::Creator.new(params: params.symbolize_keys).call
+    EntryWorker.perform_async(params)
     status :created
   end
 end
