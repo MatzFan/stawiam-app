@@ -1,4 +1,5 @@
 require "app_konfig"
+require "haml"
 require "httparty"
 require "pry"
 require "puma"
