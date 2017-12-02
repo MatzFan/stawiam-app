@@ -17,10 +17,12 @@ module SlackServices
     attr_reader :user_name, :user_uuid
 
     def message_body
+      message = "Hej, otrzymujesz tę wiadomość, ponieważ nie dbasz o bezpieczeństwo! "\
+                "Następnym razem zablokuj swój komputer nim odejdziesz od biurka."
       "{
         'channel': '@#{user_name}',
-        'username': 'Stawiam wódę app',
-        'text': 'Hej, Otrzymujesz tę wiadomość, ponieważ nie dbasz o bezpieczeństwo! Następnym razem zablokuj swój komputer. :wink:'
+        'username': 'Stawiam app',
+        'text': '#{message}'
       }"
     end
   end
