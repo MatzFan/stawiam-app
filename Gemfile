@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gem "activerecord"
 gem "app_konfig"
+gem "haml"
 gem "httparty"
 gem "pg"
 gem "pry"
