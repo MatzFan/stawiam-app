@@ -3,13 +3,13 @@ defaults: &defaults
     url: "redis://localhost:6379"
   rollbar:
     access_token: <%= ENV["ROLLBAR_ACCESS_TOKEN"] %>
+
+development:
+  <<: *defaults
   slack:
     api_token: ""
     incoming_webhook_url: ""
     users_api_endpoint: "https://slack.com/api/users.info"
-
-development:
-  <<: *defaults
 
 production:
   <<: *defaults
@@ -24,3 +24,4 @@ production:
   slack:
     api_token: <%= ENV["API_TOKEN"] %>
     incoming_webhook_url: <%= ENV["INCOMING_WEBHOOK_URL"] %>
+    users_api_endpoint: "https://slack.com/api/users.info"
