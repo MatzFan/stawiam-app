@@ -14,6 +14,6 @@
         %td
           %img{ alt: "", src: entry.user.avatar_url, width: "32" }
           = entry.user.full_name
-        %td pending
+        %td= entry.body
         %td= entry.created_at.strftime("%d.%m.%Y")
 = will_paginate @entries
