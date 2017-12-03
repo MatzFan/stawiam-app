@@ -1,6 +1,6 @@
 paths = %w(
-  app/**/*.rb
   config/initializers/*.rb
+  app/**/*.rb
 ).map(&:freeze).freeze
 
 paths.each do |path|
