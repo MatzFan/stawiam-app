@@ -7,6 +7,6 @@ class App
   post "/entries" do
     content_type :json
     EntryWorker.perform_async(params)
-    status :created
+    status :ok
   end
 end
