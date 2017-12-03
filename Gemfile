@@ -12,6 +12,7 @@ gem "pg"
 gem "pry"
 gem "puma"
 gem "rake"
+gem "rollbar", require: %w(rollbar/middleware/sinatra)
 gem "sass"
 gem "sidekiq"
 gem "sinatra", require: %w(sinatra/base sinatra/reloader)

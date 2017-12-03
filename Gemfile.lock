@@ -53,6 +53,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (3.3.3)
+    rollbar (2.15.5)
+      multi_json
     sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -105,6 +107,7 @@ DEPENDENCIES
   pry
   puma
   rake
+  rollbar
   sass
   shotgun
   sidekiq
