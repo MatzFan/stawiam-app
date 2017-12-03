@@ -29,4 +29,9 @@ class App < Sinatra::Base
     env["PATH_INFO"].sub!("/app/assets", "")
     settings.environment.call(env)
   end
+
+  # Root path
+  get "/" do
+    redirect "/entries"
+  end
 end
