@@ -4,6 +4,7 @@ require "bundler"
 Bundler.require(:default, ENV["RACK_ENV"])
 class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
+  register WillPaginate::Sinatra
 
   set :app_file, __FILE__
   set :environment, Sprockets::Environment.new
