@@ -1,12 +1,14 @@
 module SlackServices
   class ChannelMessageSender
-    def initialize(user_name:)
+    def initialize(entry:, response_url:, user_name:)
+      @entry = entry
+      @response_url = response_url
       @user_name = user_name
     end
 
     def call
       HTTParty.post(
-        AppConfig.slack.channel_webhook_url,
+        response_url,
         body: channel_message,
         headers: { "Content-Type" => "application/json" },
       )
@@ -14,10 +16,13 @@ module SlackServices
 
     private
 
-    attr_reader :user_name
+    attr_reader :entry, :response_url, :user_name
 
     def channel_message
-      "{ 'text': '*@here* UWAGA! Wóda dla wszystkich dzięki <@#{user_name}> ' }"
+      "{
+        'response_type': 'in_channel',
+        'text': '*@here* UWAGA! <@#{user_name}> stawia #{entry.body}'
+      }"
     end
   end
 end
