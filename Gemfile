@@ -14,7 +14,7 @@ gem "puma"
 gem "rake"
 gem "sass"
 gem "sidekiq"
-gem "sinatra", require: %w(sinatra/base)
+gem "sinatra", require: %w(sinatra/base sinatra/reloader)
 gem "sinatra-activerecord", require: %w(sinatra/activerecord)
 gem "sinatra-contrib"
 gem "sprockets"

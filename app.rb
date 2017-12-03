@@ -7,6 +7,10 @@ class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   register WillPaginate::Sinatra
 
+  configure :development do
+    register Sinatra::Reloader
+  end
+
   set :app_file, __FILE__
   set :haml, format: :html5, layout: :application
   set :root, File.dirname(__FILE__)
