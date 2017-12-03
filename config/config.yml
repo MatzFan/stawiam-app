@@ -11,6 +11,9 @@ development:
 
 production:
   <<: *defaults
+  authentication:
+    username: <%= ENV["AUTH_USERNAME"] %>
+    password: <%= ENV["AUTH_PASSWORD"] %>
   redis:
     url: <%= ENV["REDISTOGO_URL"] %>
   sidekiq:
