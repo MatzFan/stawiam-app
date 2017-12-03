@@ -2,6 +2,8 @@ defaults: &defaults
   redis:
     url: "redis://localhost:6379"
   slack:
+    api_token: ""
+    incoming_webhook_url: ""
     users_api_endpoint: "https://slack.com/api/users.info"
 
 development:
@@ -9,3 +11,11 @@ development:
 
 production:
   <<: *defaults
+  redis:
+    url: <%= ENV["REDISTOGO_URL"] %>
+  sidekiq:
+    username: <%= ENV["SIDEKIQ_USERNAME"] %>
+    password: <%= ENV["SIDEKIQ_PASSWORD"] %>
+  slack:
+    api_token: <%= ENV["API_TOKEN"] %>
+    incoming_webhook_url: <%= ENV["INCOMING_WEBHOOK_URL"] %>
