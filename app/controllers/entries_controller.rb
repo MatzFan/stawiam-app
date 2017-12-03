@@ -1,5 +1,6 @@
 class App
   get "/entries" do
+    protected!
     @entries = Entry.latest.paginate(page: params[:page])
     haml :"entries/index"
   end
