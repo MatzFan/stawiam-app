@@ -1,15 +1,7 @@
-require "app_konfig"
-require "haml"
-require "httparty"
-require "pry"
-require "puma"
-require "sidekiq"
-require "sinatra/activerecord"
-require "sinatra/base"
-require "sinatra/reloader"
-
 ENV["RACK_ENV"] ||= "development"
 
+require "bundler"
+Bundler.require(:default, ENV["RACK_ENV"])
 class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
