@@ -1,0 +1,19 @@
+%h1 Latest
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th{ scope: "col" } #
+      %th{ scope: "col" } Kto
+      %th{ scope: "col" } Postawił(a)
+      %th{ scope: "col" } Kiedy
+  %tbody
+    - @entries.each do |entry|
+      %tr
+        %th{ scope: "row" }= entry.id
+        %td
+          %img{ alt: "", src: entry.user.avatar_url, width: "32" }
+          = entry.user.full_name
+        %td pending
+        %td= entry.created_at.strftime("%d.%m.%Y")
+= will_paginate @entries

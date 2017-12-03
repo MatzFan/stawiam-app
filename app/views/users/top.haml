@@ -1,0 +1,17 @@
+%h1 Hall of Shame
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th{ scope: "col" } #
+      %th{ scope: "col" }
+      %th{ scope: "col" } Kto
+      %th{ scope: "col" } Ile
+  %tbody
+    - @users.each.with_index(1) do |user, index|
+      %tr
+        %th= index
+        %td{ scope: "row" }
+          %img{ alt: "", src: user.avatar_url, width: "64" }
+        %td= user.full_name
+        %td= user.entries_count
