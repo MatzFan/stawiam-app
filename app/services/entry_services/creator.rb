@@ -5,8 +5,8 @@ module EntryServices
     end
 
     def call
-      create_entry
-      send_slack_notification
+      entry = create_entry
+      send_slack_notifications(entry)
     end
 
     private
@@ -14,13 +14,14 @@ module EntryServices
     attr_reader :params
 
     def create_entry
-      Entry.create!(user: user)
+      Entry.create!(user: user, body: params[:text])
     end
 
-    def send_slack_notification
+    def send_slack_notifications(entry)
       SlackServices::Notifier.new(
+        entry: entry,
+        response_url: params[:response_url],
         user_name: params[:user_name],
-        user_uuid: params[:user_id],
       ).call
     end
 
