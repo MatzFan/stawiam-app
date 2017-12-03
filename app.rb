@@ -6,8 +6,8 @@ class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   set :app_file, __FILE__
-  set :haml, format: :html5
   set :environment, Sprockets::Environment.new
+  set :haml, format: :html5, layout: :application
   set :root, File.dirname(__FILE__)
   set :views, File.join(root, "app/views")
 

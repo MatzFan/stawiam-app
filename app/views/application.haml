@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+  %link{ href: "app/assets/app.css", rel: "stylesheet" }
+  %script{ src: "app/assets/app.js" }
+    %title Stawiam App
+  %body
+    %nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      %a.navbar-brand{ href: "/" } Stawiam App
+      %button.navbar-toggler{ "aria-controls" => "navbarsExampleDefault",
+        "aria-expanded" => "false", "aria-label" => "Toggle navigation",
+        "data-target" => "#navbarsExampleDefault", "data-toggle" => "collapse", type: "button" }
+        %span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item
+            %a.nav-link{ href: "/entries" } Ostatnie
+          %li.nav-item
+            %a.nav-link{ href: "/top" } Top
+    %main.container{ role: "main" }
+      .template
+        = yield
