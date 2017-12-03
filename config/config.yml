@@ -1,6 +1,8 @@
 defaults: &defaults
   redis:
     url: "redis://localhost:6379"
+  rollbar:
+    access_token: <%= ENV["ROLLBAR_ACCESS_TOKEN"] %>
   slack:
     api_token: ""
     incoming_webhook_url: ""
