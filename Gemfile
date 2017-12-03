@@ -19,3 +19,4 @@ gem "sinatra-activerecord", require: %w(sinatra/activerecord)
 gem "sinatra-contrib"
 gem "sprockets"
 gem "uglifier"
+gem "will_paginate", require: %w(will_paginate/active_record will_paginate/view_helpers/sinatra)
