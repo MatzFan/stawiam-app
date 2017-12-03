@@ -1,7 +1,7 @@
 class App
   helpers do
     def protected!
-      return if authorized?
+      return if App.development? || authorized?
       headers["WWW-Authenticate"] = "Basic realm=\"Restricted Area\""
       halt 401, "Not authorized\n"
     end
