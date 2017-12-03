@@ -6,6 +6,7 @@ Bundler.require(:default, ENV["RACK_ENV"].to_sym)
 class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   register WillPaginate::Sinatra
+  use Rollbar::Middleware::Sinatra
 
   configure :development do
     register Sinatra::Reloader
