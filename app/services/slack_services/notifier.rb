@@ -1,8 +1,9 @@
 module SlackServices
   class Notifier
-    def initialize(user_name:, user_uuid:)
+    def initialize(entry:, response_url:, user_name:)
+      @entry = entry
+      @response_url = response_url
       @user_name = user_name
-      @user_uuid = user_uuid
     end
 
     def call
@@ -13,14 +14,18 @@ module SlackServices
 
     private
 
-    attr_reader :user_name, :user_uuid
+    attr_reader :entry, :response_url, :user_name
 
     def fetch_user_info
       SlackServices::UserInfoFetcher.new(user_uuid: user_uuid).call
     end
 
     def send_channel_notification
-      SlackServices::ChannelMessageSender.new(user_name: user_name).call
+      SlackServices::ChannelMessageSender.new(
+        entry: entry,
+        response_url: response_url,
+        user_name: user_name,
+      ).call
     end
 
     def send_slackbot_private_message
@@ -28,6 +33,10 @@ module SlackServices
         user_name: user_name,
         user_uuid: user_uuid,
       ).call
+    end
+
+    def user_uuid
+      @user_uuid ||= entry.user.user_uuid
     end
   end
 end
