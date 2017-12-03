@@ -5,6 +5,7 @@ module EntryServices
     end
 
     def call
+      return send_hint if params[:text].blank?
       entry = create_entry
       send_slack_notifications(entry)
     end
@@ -15,6 +16,10 @@ module EntryServices
 
     def create_entry
       Entry.create!(user: user, body: params[:text])
+    end
+
+    def send_hint
+      SlackServices::HintSender.new(response_url: params[:response_url]).call
     end
 
     def send_slack_notifications(entry)
