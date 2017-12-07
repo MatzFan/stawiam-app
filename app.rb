@@ -18,9 +18,6 @@ class App < Sinatra::Base
   set :sprockets, Sprockets::Environment.new
   set :views, File.join(root, "app/views")
 
-  # Load all initializers
-  require File.join(root, "/config/initializers/auto_loader.rb")
-
   # Assets
   sprockets.append_path "app/assets/stylesheets"
   sprockets.append_path "app/assets/javascripts"
@@ -39,4 +36,11 @@ class App < Sinatra::Base
   get "/" do
     redirect "/entries"
   end
+
+  def self.staging?
+    environment == :staging
+  end
+
+  # Load all initializers
+  require File.join(root, "/config/initializers/auto_loader.rb")
 end

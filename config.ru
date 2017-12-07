@@ -1,7 +1,7 @@
 require "./app"
 require "sidekiq/web"
 
-if App.production?
+if App.production? || App.staging?
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     username == AppConfig.sidekiq.username && password == AppConfig.sidekiq.password
   end
