@@ -6,6 +6,8 @@ defaults: &defaults
 
 development:
   <<: *defaults
+  newrelic:
+    license_key: ""
   slack:
     api_token: ""
     incoming_webhook_url: ""
@@ -15,6 +17,8 @@ staging:
   authentication:
     username: <%= ENV["AUTH_USERNAME"] %>
     password: <%= ENV["AUTH_PASSWORD"] %>
+  newrelic:
+    license_key: <%= ENV["NEW_RELIC_LICENSE_KEY"] %>
   redis:
     url: <%= ENV["REDISTOGO_URL"] %>
   sidekiq:
@@ -30,6 +34,8 @@ production:
   authentication:
     username: <%= ENV["AUTH_USERNAME"] %>
     password: <%= ENV["AUTH_PASSWORD"] %>
+  newrelic:
+    license_key: <%= ENV["NEW_RELIC_LICENSE_KEY"] %>
   redis:
     url: <%= ENV["REDISTOGO_URL"] %>
   sidekiq:
