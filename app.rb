@@ -37,6 +37,10 @@ class App < Sinatra::Base
     redirect "/entries"
   end
 
+  not_found do
+    redirect "/entries"
+  end
+
   def self.staging?
     environment == :staging
   end
