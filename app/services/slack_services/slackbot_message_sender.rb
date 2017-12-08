@@ -18,7 +18,7 @@ module SlackServices
 
     def message_body
       message = "Hej, otrzymujesz tę wiadomość, ponieważ nie dbasz o bezpieczeństwo! "\
-                "Następnym razem zablokuj swój komputer nim odejdziesz od biurka."
+                "Następnym razem zablokuj swój komputer nim odejdziesz od biurka. Trust no one."
       "{
         'channel': '@#{user_name}',
         'username': 'Stawiam App',
