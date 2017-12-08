@@ -21,7 +21,7 @@ module SlackServices
                 "Następnym razem zablokuj swój komputer nim odejdziesz od biurka."
       "{
         'channel': '@#{user_name}',
-        'username': 'Stawiam app',
+        'username': 'Stawiam App',
         'text': '#{message}'
       }"
     end
