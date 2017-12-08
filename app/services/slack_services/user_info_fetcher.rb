@@ -31,7 +31,7 @@ module SlackServices
     def update_user_attributes
       user.update!(
         full_name: api_response.dig(:user, :real_name),
-        avatar_url: api_response.dig(:user, :profile, :image_512),
+        avatar_url: api_response.dig(:user, :profile, :image_192),
       )
     end
   end
