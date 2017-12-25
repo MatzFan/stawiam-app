@@ -21,10 +21,6 @@ class App < Sinatra::Base
   # Assets
   sprockets.append_path "app/assets/stylesheets"
   sprockets.append_path "app/assets/javascripts"
-  # Workaround https://github.com/glebm/popper_js-rubygem/issues/5
-  sprockets.append_path(
-    File.join(Gem::Specification.find_by_name("popper_js").gem_dir, "assets", "javascripts"),
-  )
   sprockets.js_compressor  = Uglifier.new(harmony: true)
   sprockets.css_compressor = :scss
   get "/app/assets/*" do
