@@ -34,13 +34,22 @@ reload the app automatically you can use `shotgun`, however it may slow down the
 
 In the future. :grin:
 
+### Slack integration
+
+There are two things to cover:
+1. Slack apps so it's possible to use slash commands, [more here](https://api.slack.com/slack-apps).
+Once it's created please use OAuth access token and set permission scopes as `users.read`
+to fetch users' data properly. The endpoint for slash command should point to `/entries`.
+2. Custom integrations, namely `incoming webhooks` so the app is able to send messages via Slackbot.
+
 ### Deploying
 
-[tell how to deploy changes to server]
+Before a deploy you need to be a collaborator of the app on Heroku. If you are then you can follow
+[this guide](https://devcenter.heroku.com/articles/collab#set-up).
 
 ### Code style
 
-[few words about style guide or link to STYLEGUIDE.md file]
+Just [ruby-style-guide](https://github.com/bbatsov/ruby-style-guide).
 
 ## Further Reading / Useful Links
 
