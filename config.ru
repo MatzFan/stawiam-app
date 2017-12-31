@@ -7,4 +7,6 @@ if App.production? || App.staging?
   end
 end
 
+run App
+
 run Rack::URLMap.new("/" => App, "/sidekiq" => Sidekiq::Web)
