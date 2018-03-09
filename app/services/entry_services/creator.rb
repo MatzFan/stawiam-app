@@ -6,6 +6,7 @@ module EntryServices
 
     def call
       return send_hint if params[:text].blank?
+      return send_duplication_info if already_sent?
       entry = create_entry
       send_slack_notifications(entry)
     end
@@ -14,8 +15,16 @@ module EntryServices
 
     attr_reader :params
 
+    def already_sent?
+      Entry.where("user_id = ? AND created_at >= ?", user.id, Time.current - 5.minutes).exists?
+    end
+
     def create_entry
       Entry.create!(user: user, body: params[:text])
+    end
+
+    def send_duplication_info
+      SlackServices::DuplicationInfoSender.new(response_url: params[:response_url]).call
     end
 
     def send_hint
