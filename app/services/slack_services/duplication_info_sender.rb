@@ -1,5 +1,5 @@
 module SlackServices
-  class DuplicationInfoSender < PrivateInfoBaseSender
+  class DuplicationInfoSender < SlackServices::PrivateInfoBaseSender
     private
 
     def message_body

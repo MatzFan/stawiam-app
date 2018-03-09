@@ -1,5 +1,5 @@
 module SlackServices
-  class HintSender < PrivateInfoBaseSender
+  class HintSender < SlackServices::PrivateInfoBaseSender
     private
 
     def message_body
