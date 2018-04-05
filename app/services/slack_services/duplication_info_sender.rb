@@ -1,5 +1,7 @@
+require_relative "private_info_base_sender"
+
 module SlackServices
-  class DuplicationInfoSender < SlackServices::PrivateInfoBaseSender
+  class DuplicationInfoSender < PrivateInfoBaseSender
     private
 
     def message_body
